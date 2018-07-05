@@ -221,7 +221,13 @@ export default class WXAppPlugin {
 
 	async getEntryResource() {
 		const appJSONFile = resolve(this.base, 'app.json');
-		const { pages = [], tabBar = {} } = await readJson(appJSONFile);
+		const { pages = [], tabBar = {}, subPackages = [] } = await readJson(appJSONFile);
+
+    for(const pkg of subPackages) {
+      for(const pkgPage of pkg.pages) {
+        pages.push(`${pkg.root}/${pkgPage}`);
+      }
+    }
 
 		const components = new Set();
 		for (const page of pages) {
