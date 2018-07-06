@@ -24,7 +24,7 @@
     "plugin"
   ],
   "author": "cap32",
-  "repository": "Cap32/wxapp-webpack-plugin",
+  "repository": "lyfeway/wxapp-webpack-plugin",
   "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.24.0",
